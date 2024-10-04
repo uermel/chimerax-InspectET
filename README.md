@@ -19,7 +19,7 @@ toolshed install /PATH/TO/WHEEL/.whl
 
 **Using IMOD basename and real data:**
 
-https://github.com/user-attachments/assets/400a8b10-9e6f-44e7-a5a1-019ace61217f
+https://github.com/user-attachments/assets/155f1418-d0d2-45b2-a1db-ee0aa5bec8f0
 
 **Using simulated boxes:**
 
