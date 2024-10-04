@@ -30,7 +30,6 @@ https://github.com/user-attachments/assets/6c87c46b-2f33-4021-b9b2-af050643aea2
 Create animations of the alignment using the `inspectet play` command:
 
 ```
-inspectet play
 inspectet play framesPerView 10 loopNumber 4
 ```
 
