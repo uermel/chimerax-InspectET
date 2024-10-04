@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+
+[project]
+name = "ChimeraX-InspectET"
+version = "0.0.5"
+dynamic = ["classifiers", "requires-python"]
+dependencies = [
+    "ChimeraX-Core~=1.7.1",
+    "ChimeraX-OME-Zarr",
+    "sshfs>=2024.6.0",
+    "s3fs>=2024.3.1",
+    "qasync",
+    "qt-async-threads",
+    "fonticon-materialdesignicons7",
+    "zarr",
+    "aiobotocore",
+    "cryoet-alignment==0.0.4",
+]
+
+authors = [
+  {name = "Utz H. Ermel", email = "utz@ermel.me"},
+]
+description = "Inspect cryoET alignments in ChimeraX."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["cryoet", "cryo-et", "tomography", "alignment"]
+
+[project.urls]
+Repository = "https://github.com/uermel/chimerax-InspectET.git"
+Issues = "https://github.com/uermel/chimerax-InspectET/issues"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ipython",
+    "pre-commit",
+    "ruff",
+]
+
+[chimerax]
+category = "General"
+package = "chimerax.InspectET"
+min-session-version="1"
+max-session-version="1"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+]
+
+[chimerax.tool."InspectET"]
+tool_name = "InspectET"
+category = "Volume Data"
+synopsis = "Inspect cryoET alignments."
+
+[chimerax.command."inspectet play"]
+category = "General"
+synopsis = "Playback a cryoET alignment."
+
+[tool.black]
+line-length = 120
+target_version = ['py311']
+
+[tool.ruff]
+select = [
+    "E", "W",  # pycodestyle
+    "F",  # pyflakes
+    "B",  # bugbear
+    "I",  # isort
+    "N",  # pep8-naming
+    "ASYNC",  # async
+    "COM",  # commas
+    "C4",  # comprehensions
+    "DTZ",  # datetimez
+    "ISC",  # implicit-str-concat
+    "G",  # logging-format
+    "T20",  # print
+    "SIM",  # simplify
+]
+ignore = [
+    "N802",  # Function name should be lowercase
+    "N999",  # Invalid module name
+    "E501",  # line too long
+    "C408",  # rewrite empty built-ins as literals
+    "T201",  # print statements.
+    "DTZ007", # Datetime objects without timezones.
+    "DTZ005", # More datetimes without timezones.
+]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.isort]
+known-first-party =["common"]
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "double"
+
+[tool.mypy]
+show_error_codes = true
+ignore_missing_imports = true
+warn_unreachable = true
+strict = true
