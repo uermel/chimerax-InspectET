@@ -12,7 +12,7 @@ Currently supports these formats:
 Download the wheel file from the most recent release and run this command in the ChimeraX command line:
 
 ```
-toolshed install /PATH/TO/WHEEL/.whl
+toolshed install /PATH/TO/WHEEL/ChimeraX_InspectET-0.0.5-py3-none-any.whl
 ```
 
 ## Usage
