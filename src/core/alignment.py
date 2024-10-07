@@ -191,7 +191,9 @@ def create_alignment_objects(
             # General Alignment
             pos = translation((-im_size[0] / 2, -im_size[1] / 2, z_offset))
             im.position = pos
-            fake_im.position = pos
+
+            pos2 = translation((0, 0, z_offset))
+            fake_im.position = pos2
 
             from chimerax.core.commands import run
 
@@ -234,7 +236,9 @@ def create_alignment_objects(
 
             pos = translation((-im_size[0] / 2, -im_size[0] / 2, z_offset))
             im.position = pos
-            im2.position = pos
+
+            pos2 = translation((0, 0, z_offset))
+            im2.position = pos2
 
         for psap in alignment.per_section_alignment_parameters:
             im = ali_tiltseries.child_models()[psap.z_index]
